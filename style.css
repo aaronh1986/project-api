@@ -8,5 +8,6 @@
   }
 
   .status {
-      color: red !important;
+      color: red ;
+      font-size: 2rem;
   }

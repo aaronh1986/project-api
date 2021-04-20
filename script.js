@@ -61,6 +61,7 @@ function showEvents(json) {
     item.children('.promoter').text(events[i].promoters[1].name);
     item.children('.note').text(events[i].pleaseNote)
   /*  item.children('.cost').text(events)[i].priceRanges[0].max ;  */
+  
     try {
       item.children('.venue').text(events[i]._embedded.venues[0].name + " in " + events[i]._embedded.venues[0].city.name);
     } catch (err) {
@@ -77,13 +78,13 @@ function showEvents(json) {
       }
     });
     item=item.next();
-  }
+ }
   console.log(events)
-}
+} 
 
 
  function getAttraction(id) {
-    fetch("https://app.ticketmaster.com/discovery/v2/events.json?keyword=deftones&id=16vOZpfQ9G7SOsV&apikey=6UVAl4kH2qy1pxo2XkYN6ZAIgLJIX3SK")
+    fetch("https://app.ticketmaster.com/discovery/v2/attractions/K8vZ9171pP7?keyword=deftones&locale=en-us")
     .then(response => response.json()) //This promise returns response in JSON format
     .then((data) => showEvents(data));
 }
