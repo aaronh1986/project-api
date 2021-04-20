@@ -44,10 +44,6 @@ fetch("https://app.ticketmaster.com/discovery/v2/events.json?keyword=deftones&id
 .then(response => response.json()) //This promise returns response in JSON format
 .then((data) => showEvents(data));    /* sortInfo(data) */
 
-function myWay(json) {
-    
-}
-
 function showEvents(json) {
   var items = $('#events .list-group-item');
   items.hide();
@@ -68,7 +64,7 @@ function showEvents(json) {
       console.log(err);
     }
     item.show();
-    item.off("click");
+   /* item.off("click");
     item.click(events[i], function(eventObject) {
       console.log(eventObject.data);
       try {
@@ -78,10 +74,12 @@ function showEvents(json) {
       }
     });
     item=item.next();
- }
+ } */
   console.log(events)
 } 
+}
 
+/* Consider un-commenting this.....
 
  function getAttraction(id) {
     fetch("https://app.ticketmaster.com/discovery/v2/attractions/K8vZ9171pP7?keyword=deftones&locale=en-us")
@@ -102,3 +100,8 @@ function showAttraction(json) {
 }
 
 getEvents(page); 
+
+*/
+
+
+/* https://app.ticketmaster.com/discovery/v2/events.json?keyword=deftones&id=16vOZpfQ9G7SOsV&apikey=6UVAl4kH2qy1pxo2XkYN6ZAIgLJIX3SK */
